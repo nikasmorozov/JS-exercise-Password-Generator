@@ -32,5 +32,11 @@ function generatePass () {
     combinedPass.push(nameArray[0]);
 
     document.getElementById('output').textContent = combinedPass.join('');
-    }
+    };
+
+    function clearInputs() {
+        serviceName.value = '';
+        servicePass.value = '';
+    };
+    clearInputs();
 };

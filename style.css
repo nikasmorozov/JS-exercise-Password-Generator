@@ -27,6 +27,11 @@ input, button, #output {
     box-sizing: border-box;
     margin: 20px;
     padding: 10px;
+    outline: none;
+}
+
+#output {
+    color: #2f3d47;
 }
 
 button {
