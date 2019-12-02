@@ -1,5 +1,5 @@
 document.getElementById('generatePass').addEventListener('click', generatePass);
-
+let combinedPass = [];
 function generatePass () {
     if(serviceName.value.length > 0 && servicePass.value.length > 0) {
     let serviceName = document.getElementById('serviceName');
@@ -8,7 +8,7 @@ function generatePass () {
     let nonVowels = 0;
     let nameArray = serviceName.value.split('');
     let passArray = servicePass.value.split('');
-    let combinedPass = [];
+   
 
     combinedPass.splice(0, 0, nameArray[nameArray.length - 1]);
 
@@ -27,7 +27,7 @@ function generatePass () {
     combinedPass.splice(2, 0, passArray.join(''));
 
 //    cia noriu padaryti single line/arrow
-    nameArray.forEach(function (char) {
+    nameArray.forEach( (char) => {
         if (!(/^[aeiou]$/.test(char.toLowerCase()))) {
             nonVowels += 1
         };
@@ -43,5 +43,7 @@ function generatePass () {
         serviceName.value = '';
         servicePass.value = '';
     };
+
+    console.log(combinedPass);
     clearInputs();
 };
