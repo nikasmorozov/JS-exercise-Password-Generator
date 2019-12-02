@@ -1,11 +1,11 @@
-let serviceName = document.getElementById('serviceName');
-let servicePass = document.getElementById('servicePass');
-let vowels = 0;
-let nonVowels = 0;
-
 document.getElementById('generatePass').addEventListener('click', generatePass);
 
 function generatePass () {
+    if(serviceName.value.length > 0 && servicePass.value.length > 0) {
+    let serviceName = document.getElementById('serviceName');
+    let servicePass = document.getElementById('servicePass');
+    let vowels = 0;
+    let nonVowels = 0;
     let nameArray = serviceName.value.split('');
     let passArray = servicePass.value.split('');
     let combinedPass = [];
@@ -32,4 +32,5 @@ function generatePass () {
     combinedPass.push(nameArray[0]);
 
     document.getElementById('output').textContent = combinedPass.join('');
+    }
 };
