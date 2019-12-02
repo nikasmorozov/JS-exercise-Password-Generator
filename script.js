@@ -12,12 +12,17 @@ function generatePass () {
 
     combinedPass.splice(0, 0, nameArray[nameArray.length - 1]);
 
-    nameArray.forEach(function (char) {
+    nameArray.forEach( (char) => {
         if (/^[aeiou]$/.test(char.toLowerCase())) {
             vowels += 1
         };
     });
-    combinedPass.push(nameArray[vowels - 1]);
+    if(vowels > 0) {
+        combinedPass.push(nameArray[vowels - 1])
+    }
+    else {
+        combinedPass.push(nameArray[vowels])
+    };
 
     combinedPass.splice(2, 0, passArray.join(''));
 
